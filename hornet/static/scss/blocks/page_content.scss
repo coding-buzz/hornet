@@ -1,0 +1,57 @@
+.page-content {
+    position: relative;
+    top: -55px;
+    margin-bottom: -55px;
+
+    .wrapper {
+        height: 400px;
+        background: #FFFFFF;
+        position: relative;
+
+        .shadows {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 130px;
+
+            div {
+                position: absolute;
+                top: 0px;
+            }
+
+            .left-shadow {
+                height: 100%;
+                width: 1px;
+                box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, .5);
+                left: 0px;
+            }
+
+            .right-shadow {
+                height: 100%;
+                width: 1px;
+                box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, .5);
+                right: 0px;
+            }
+
+            .top-shadow {
+                height: 1px;
+                width: 100%;
+                box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, .5);
+                left: 0px;
+            }
+
+            .inner-shadow-mask {
+                width: 100%;
+                height: 100%;
+                padding-top: 10px;
+                background: white;
+                left: 0px;
+            }
+        }
+
+        .content {
+            position: relative;
+        }
+    }
+}
