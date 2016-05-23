@@ -63,3 +63,7 @@ target/
 
 # Database
 *.sqlite3
+
+# Intellij
+.idea/
+*iml
