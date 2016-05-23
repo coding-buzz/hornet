@@ -67,3 +67,6 @@ target/
 # Intellij
 .idea/
 *iml
+
+# Collected static files
+static/
