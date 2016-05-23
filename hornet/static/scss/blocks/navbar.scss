@@ -1,0 +1,30 @@
+.navbar {
+    height: 40px;
+    margin: 60px 0px 50px 0px;
+
+    .page-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .menu-items {
+        float: right;
+        line-height: 40px;
+
+        li {
+            display: inline-block;
+            float: left;
+            margin-right: 25px;
+            font-size: 16px;
+
+            &:last-of-type {
+                margin-right: 0px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000000;
+            }
+        }
+    }
+}

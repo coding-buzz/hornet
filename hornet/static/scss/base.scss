@@ -1,3 +1,14 @@
+@import 'general/reset';
+@import 'general/fonts';
+@import 'blocks/navbar';
+
+
 body {
-    background: #EEEEEE;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+
+    .wrapper {
+        margin: auto;
+        max-width: 960px;
+    }
 }

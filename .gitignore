@@ -69,4 +69,4 @@ target/
 *iml
 
 # Collected static files
-static/
+/static
