@@ -56,14 +56,16 @@
                     display: block;
                     content: "";
                     height: 100%;
+                    width: 0%;
                     background: #D8D8D8;
                     border: 1px solid #C5C5C5;
                     margin-top: -1px;
                     margin-left: -1px;
+                    transition: width 1s ease-out;
                 }
 
                 @for $i from 1 through 100 {
-                    &.skill-#{$i}-percent:before {
+                    &.skill-#{$i}-percent.expanded:before {
                         width: #{$i * 1%};
                     }
                 }
