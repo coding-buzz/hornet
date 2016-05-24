@@ -34,4 +34,53 @@
             float: right;
         }
     }
+
+    .skills-section {
+        .skills {
+            margin-top: 45px;
+        }
+
+        .skill {
+            margin-bottom: 6px;
+
+            .skill-bar {
+                width: 440px;
+                height: 20px;
+                background: url('/static/images/skill_bg.png');
+                background-size: 6px 16px;
+                border: 1px solid #D2D2D2;
+                box-sizing: border-box;
+                display: inline-block;
+
+                &:before {
+                    display: block;
+                    content: "";
+                    height: 100%;
+                    background: #D8D8D8;
+                    border: 1px solid #C5C5C5;
+                    margin-top: -1px;
+                    margin-left: -1px;
+                }
+
+                @for $i from 1 through 100 {
+                    &.skill-#{$i}-percent:before {
+                        width: #{$i * 1%};
+                    }
+                }
+            }
+
+            .skill-name {
+                font-size: 18px;
+                color: #666666;
+                font-weight: 100;
+                display: inline-block;
+                position: relative;
+                top: -3px;
+                width: 340px;
+                text-align: right;
+                padding-right: 35px;
+                box-sizing: border-box;
+            }
+        }
+    }
 }
