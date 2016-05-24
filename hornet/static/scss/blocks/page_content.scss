@@ -4,7 +4,6 @@
     margin-bottom: -55px;
 
     .wrapper {
-        height: 400px;
         background: #FFFFFF;
         position: relative;
 
@@ -71,6 +70,10 @@
 
             section {
                 margin-bottom: 40px;
+
+                &:last-of-type {
+                    margin-bottom: 0px;
+                }
             }
         }
     }
