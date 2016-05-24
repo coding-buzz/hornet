@@ -85,4 +85,21 @@
             }
         }
     }
+
+    .hire-me-section {
+        .companies-carousel {
+            margin-top: 40px;
+            height: 80px;
+            overflow: hidden;
+
+            .image {
+                display: inline-block;
+            }
+
+            img {
+                height: 80px;
+                margin-right: 30px;
+            }
+        }
+    }
 }

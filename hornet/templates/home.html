@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block page_scripts %}
+    <script type="text/javascript" src="{% static "scripts/jquery.imageslider.js" %}"></script>
     <script type="text/javascript" src="{% static "scripts/home_page.js" %}"></script>
 {% endblock %}
 
@@ -135,6 +136,46 @@
                             <div class="skill-bar skill-75-percent"></div>
                         </li>
                     </ul>
+                </section>
+
+                <section class="hire-me-section">
+                    <h2>
+                        Hire me
+                    </h2>
+                    <p>
+                        I am currently based in Łódź, Poland, working @ goodylabs. I am always open for new job opportunities including full stack development, application architecture design, problem solving, algorithm design and legacy code refactorization.
+                    </p>
+                    <p>
+                        Here You can grab my resume. Feel free to contact me via marcin@coding.buzz.
+                    </p>
+                    <p>
+                        &nbsp;
+                    </p>
+                    <p>
+                        Companies that trusted me:
+                    </p>
+                    <div class="companies-carousel">
+                        <div class="image-wrapper">
+                            <div class="image">
+                                <img src="{% static "images/brands/goodylabs.png" %}" />
+                            </div>
+                            <div class="image">
+                                <img src="{% static "images/brands/creality.jpg" %}" />
+                            </div>
+                            <div class="image">
+                                <img src="{% static "images/brands/outbox.jpg" %}" />
+                            </div>
+                            <div class="image">
+                                <img src="{% static "images/brands/comarch.jpg" %}" />
+                            </div>
+                            <div class="image">
+                                <img src="{% static "images/brands/cima.jpg" %}" />
+                            </div>
+                            <div class="image">
+                                <img src="{% static "images/brands/shell.png" %}" />
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>

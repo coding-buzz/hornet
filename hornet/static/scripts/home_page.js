@@ -22,4 +22,11 @@ $(function() {
 
         return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
+
+
+    $('.companies-carousel').imageslider({
+        slideItems: '.image',
+        slideContainer: '.image-wrapper',
+        slideDuration: 2
+    });
 });
