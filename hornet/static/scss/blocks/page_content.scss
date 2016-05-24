@@ -52,6 +52,21 @@
 
         .content {
             position: relative;
+            padding: 30px;
+            box-sizing: border-box;
+
+            p {
+                font-size: 18px;
+                color: #666666;
+                line-height: 30px;
+                font-weight: 100;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 28px;
+                color: #333333;
+            }
         }
     }
 }

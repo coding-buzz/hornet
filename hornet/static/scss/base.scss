@@ -5,6 +5,8 @@
 @import 'blocks/featured_image';
 @import 'blocks/page_content';
 
+@import 'pages/home_page';
+
 
 body {
     font-family: Roboto, sans-serif;
@@ -13,5 +15,9 @@ body {
     .wrapper {
         margin: auto;
         max-width: 960px;
+    }
+
+    .clearfix {
+        clear: both;
     }
 }

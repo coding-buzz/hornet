@@ -1,0 +1,37 @@
+.home-page {
+    .about-me-section {
+        .social-links {
+            width: 340px;
+            float: left;
+            padding-right: 35px;
+            box-sizing: border-box;
+
+            .links {
+                margin-top: 40px;
+
+                li {
+                    margin-bottom: 4px;
+                }
+
+                .user-name {
+                    width: 120px;
+                    display: inline-block;
+                    text-align: right;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #999999;
+                    font-weight: 100;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .description {
+            width: 560px;
+            float: right;
+        }
+    }
+}
