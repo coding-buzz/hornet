@@ -54,6 +54,11 @@
                     color: #999999;
                     font-weight: 100;
                     line-height: 30px;
+                    border-bottom: none;
+
+                    &:before {
+                        display: none;
+                    }
 
                     &:hover {
                         .site-name {
