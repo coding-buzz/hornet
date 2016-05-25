@@ -27,6 +27,23 @@ nav {
             a {
                 text-decoration: none;
                 color: #000000;
+                position: relative;
+
+                &:before {
+                    content: " ";
+                    position: absolute;
+                    width: 0%;
+                    overflow: hidden;
+                    transition: width 0.5s;
+                    border-bottom: 1px solid #000000;
+                    height: 100%;
+                    top: 0px;
+                    left: 0px;
+                }
+
+                &:hover:before, &.active:before {
+                    width: 100%;
+                }
             }
         }
     }

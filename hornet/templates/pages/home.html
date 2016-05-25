@@ -25,31 +25,18 @@
                             Do not hesitate to reach me on
                         </h2>
                         <ul class="links">
-                            <li>
-                                <a href="#">
-                                    <span class="user-name">cines91</span> @Facebook
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="user-name">ilu2112</span> @GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="user-name">coding-buzz</span> @GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="user-name">marcinskiba91</span> @LinkedIn
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="user-name">marcin</span> @coding.buzz
-                                </a>
-                            </li>
+                            {% for link in social_links %}
+                                <li>
+                                    <a href="{{ link.link }}">
+                                        <span class="user-name-wrapper">
+                                            <span class="user-name" data-hover="{{ link.name }}">{{ link.name }}</span>
+                                        </span>
+                                        <span class="site-name">
+                                            {{ link.site }}
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="description">
