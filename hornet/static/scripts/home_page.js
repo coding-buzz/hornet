@@ -6,6 +6,7 @@ var homepage = {
     init: function() {
         this.initScrollBarsAnimation();
         this.initImageSlider();
+        this.initFeaturedImageScale();
     },
 
     initScrollBarsAnimation: function() {
@@ -53,6 +54,16 @@ var homepage = {
                 this.skillBars.splice(this.skillBars.indexOf(skillBar), 1);
             }
         }.bind(this));
+    },
+
+    initFeaturedImageScale: function() {
+        this.scaleFeaturedImage();
+        $(window).resize(this.scaleFeaturedImage);
+    },
+
+    scaleFeaturedImage: function() {
+        var imageHeight = $('.featured-image img').height();
+        $('.featured-image').height(imageHeight);
     }
 }
 

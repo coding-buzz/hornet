@@ -14,11 +14,20 @@ body {
     font-weight: 300;
 
     .wrapper {
-        margin: auto;
+        margin: auto 14px;
         max-width: 960px;
     }
 
     .clearfix {
         clear: both;
+    }
+}
+
+
+@media all and (min-width: 480px) {
+    body {
+        .wrapper {
+            margin: auto;
+        }
     }
 }

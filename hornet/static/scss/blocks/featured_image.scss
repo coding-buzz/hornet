@@ -1,7 +1,16 @@
 .featured-image {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
     img {
+        width: 120%;
         max-width: 1200px;
-        display: block;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
         margin: auto;
     }
 }

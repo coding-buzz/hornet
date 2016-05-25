@@ -1,7 +1,7 @@
 .page-content {
     position: relative;
-    top: -55px;
-    margin-bottom: -55px;
+    top: -25px;
+    margin-bottom: -25px;
 
     .wrapper {
         background: #FFFFFF;
@@ -104,5 +104,13 @@
                 }
             }
         }
+    }
+}
+
+
+@media all and (min-width: 480px) {
+    .page-content {
+        top: -55px;
+        margin-bottom: -55px;
     }
 }
