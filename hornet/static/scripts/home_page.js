@@ -19,10 +19,13 @@ var homepage = {
     },
 
     initImageSlider: function() {
+        $('.companies-carousel .images-wrapper').append(
+            $('.companies-carousel .images-wrapper').html()
+        );
         $('.companies-carousel').imageslider({
             slideItems: '.image',
             slideContainer: '.images-wrapper',
-            slideDuration: 15
+            slideDuration: 0.001
         });
     },
 
