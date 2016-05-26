@@ -79,6 +79,7 @@
 
     .skills-section {
         .skills {
+            text-align: center;
             margin-top: 15px;
         }
 
@@ -147,7 +148,7 @@
 }
 
 
-@media all and (min-width: 480px) {
+@media all and (min-width: 960px) {
     .home-page {
         .about-me-section {
             .social-links {
@@ -182,6 +183,7 @@
 
         .skills-section {
             .skills {
+                text-align: initial;
                 margin-top: 45px;
             }
 
