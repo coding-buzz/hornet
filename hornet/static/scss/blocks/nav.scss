@@ -4,6 +4,7 @@ nav {
     position: absolute;
     width: 100%;
     z-index: 10;
+    font-weight: 300;
 
     &:after {
         content: "";
@@ -18,14 +19,14 @@ nav {
     .page-title {
         font-size: 14px;
         line-height: 35px;
-        margin-left: 15px;
+        margin-left: 1px;
         color: #FFFFFF;
     }
 
     .menu-items {
         float: right;
         line-height: 35px;
-        margin-right: 15px;
+        margin-right: 1px;
 
         li {
             display: inline-block;
