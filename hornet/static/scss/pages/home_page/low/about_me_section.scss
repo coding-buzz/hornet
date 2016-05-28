@@ -1,0 +1,73 @@
+.about-me-section {
+    .social-links {
+        box-sizing: border-box;
+        margin-top: 30px;
+
+        ul {
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        .user-name-wrapper {
+            width: 50%;
+            display: inline-block;
+            text-align: right;
+        }
+
+        .user-name {
+            border-bottom: 1px dotted #CCC;
+            position: relative;
+            display: inline-block;
+            height: 20px;
+
+            &:before {
+                content: attr(data-hover);
+                position: absolute;
+                color: #000000;
+                width: 0%;
+                overflow: hidden;
+                transition: width 0.5s;
+                border-bottom: 1px solid #000000;
+                display: inline-block;
+                height: 100%;
+                white-space: nowrap;
+            }
+        }
+
+        .site-name {
+            transition: color .5s;
+
+            &:before {
+                content: '@';
+                margin-right: -3px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 20px;
+            color: #999999;
+            border-bottom: none;
+
+            &:before {
+                display: none;
+            }
+
+            &:hover {
+                .site-name {
+                    color: #000000;
+                }
+
+                .user-name {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

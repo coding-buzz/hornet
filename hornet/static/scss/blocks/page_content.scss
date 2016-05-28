@@ -7,103 +7,8 @@
         background: #FFFFFF;
         position: relative;
 
-        .shadows {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 65px;
-
-            & > div {
-                position: absolute;
-                top: 0px;
-            }
-
-            .left-shadow {
-                height: 100%;
-                width: 1px;
-                box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, .5);
-                left: 0px;
-            }
-
-            .right-shadow {
-                height: 100%;
-                width: 1px;
-                box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, .5);
-                right: 0px;
-            }
-
-            .top-shadow {
-                height: 1px;
-                width: 100%;
-                box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, .5);
-                left: 0px;
-            }
-
-            .inner-shadow-mask {
-                width: 100%;
-                height: 100%;
-                padding-top: 10px;
-                background: white;
-                left: 0px;
-            }
-        }
-
-        .content {
-            position: relative;
-            padding: 10px;
-            box-sizing: border-box;
-
-            p {
-                font-size: 14px;
-                color: #666666;
-                line-height: 20px;
-                margin-bottom: 8px;
-            }
-
-            h2 {
-                font-size: 20px;
-                color: #333333;
-                margin-bottom: 10px;
-                font-weight: 300;
-            }
-
-            section {
-                margin-bottom: 30px;
-
-                &:last-of-type {
-                    margin-bottom: 0px;
-                }
-            }
-
-            a {
-                color: #666666;
-                text-decoration: none;
-                border-bottom: 1px dotted #666666;
-                transition: color .5s;
-                position: relative;
-
-                &:before {
-                    content: " ";
-                    position: absolute;
-                    width: 0%;
-                    overflow: hidden;
-                    transition: width 0.5s;
-                    border-bottom: 1px solid #000000;
-                    height: 100%;
-                    top: 0px;
-                    left: 0px;
-                }
-
-                &:hover {
-                    color: #000000;
-
-                    &:before {
-                        width: 100%;
-                    }
-                }
-            }
-        }
+        @import 'page_content/low/shadows';
+        @import 'page_content/low/content';
     }
 }
 
@@ -114,28 +19,8 @@
         margin-bottom: -55px;
 
         .wrapper {
-            .shadows {
-                height: 130px;
-            }
-
-            .content {
-                padding: 30px;
-
-                section {
-                    margin-bottom: 40px;
-                }
-
-                h2 {
-                    font-size: 28px;
-                    margin-bottom: 25px;
-                }
-
-                p {
-                    font-size: 18px;
-                    line-height: 30px;
-                    margin-bottom: 10px;
-                }
-            }
+            @import 'page_content/medium/shadows';
+            @import 'page_content/medium/content';
         }
     }
 }

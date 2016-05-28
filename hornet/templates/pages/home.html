@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_scripts %}
     <script type="text/javascript" src="{% static "scripts/jquery.imageslider.js" %}"></script>
     <script type="text/javascript" src="{% static "scripts/home_page.js" %}"></script>
@@ -32,7 +33,7 @@
                         <h2>
                             Do not hesitate to reach me on
                         </h2>
-                        <ul class="links">
+                        <ul>
                             {% for link in social_links %}
                                 <li>
                                     <a href="{{ link.link }}">

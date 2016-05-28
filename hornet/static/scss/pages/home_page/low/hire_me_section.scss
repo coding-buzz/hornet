@@ -1,0 +1,17 @@
+.hire-me-section {
+    .companies-carousel {
+        margin-top: 10px;
+        height: 50px;
+        overflow: hidden;
+        width: 100%;
+
+        .image {
+            display: inline-block;
+
+            img {
+                height: 50px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

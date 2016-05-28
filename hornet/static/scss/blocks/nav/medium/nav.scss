@@ -1,0 +1,36 @@
+nav {
+    height: 40px;
+    margin: 25px 0px 25px 0px;
+    background: #FFFFFF;
+    position: initial;
+    width: initial;
+
+    &:after {
+        display: none;
+    }
+
+    .page-title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-left: 30px;
+        color: #000000;
+    }
+
+    .menu-items {
+        line-height: 40px;
+        margin-right: 30px;
+
+        li {
+            font-size: 16px;
+            margin-right: 25px;
+        }
+
+        a {
+            color: #000000;
+
+            &:before {
+                border-color: #000000;
+            }
+        }
+    }
+}

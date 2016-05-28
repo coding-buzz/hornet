@@ -1,0 +1,49 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+
+body {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+
+    .wrapper {
+        margin: auto 14px;
+        max-width: 960px;
+    }
+
+    .clearfix {
+        clear: both;
+    }
+}
+
+
+@media all and (min-width: 768px) {
+    body {
+        .wrapper {
+            margin: auto 25px;
+        }
+    }
+}
+
+
+@media all and (min-width: 1050px) {
+    body {
+        .wrapper {
+            margin: auto;
+        }
+    }
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and ( min-resolution: 192dpi),
+only screen and ( min-resolution: 2dppx) {
+    body {
+        font-weight: 100;
+    }
+}
