@@ -32,7 +32,16 @@ body {
 }
 
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 768px) {
+    body {
+        .wrapper {
+            margin: auto 25px;
+        }
+    }
+}
+
+
+@media all and (min-width: 1050px) {
     body {
         .wrapper {
             margin: auto;

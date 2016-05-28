@@ -148,17 +148,12 @@
 }
 
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 768px) {
     .home-page {
         .about-me-section {
             .social-links {
-                width: 340px;
-                float: left;
-                padding-right: 35px;
-                margin-top: 0px;
-
                 .links {
-                    margin-top: 40px;
+                    text-align: center;
 
                     .user-name-wrapper {
                         width: 120px;
@@ -174,29 +169,23 @@
                     }
                 }
             }
-
-            .description {
-                width: 560px;
-                float: right;
-            }
         }
 
         .skills-section {
             .skills {
-                text-align: initial;
                 margin-top: 45px;
             }
 
             .skill {
+                .skill-bar {
+                    width: 570px;
+                    height: 22px;
+                }
+
                 .skill-name {
-                    font-size: 18px;
-                    position: relative;
-                    top: -3px;
-                    width: 340px;
-                    text-align: right;
-                    padding-right: 35px;
-                    margin-left: 0px;
-                    color: #666666;
+                    margin-left: 4px;
+                    font-size: 16px;
+                    top: 4px;
                 }
             }
         }
@@ -211,6 +200,52 @@
                         height: 80px;
                         margin-right: 30px;
                     }
+                }
+            }
+        }
+    }
+}
+
+
+@media all and (min-width: 1050px) {
+    .home-page {
+        .about-me-section {
+            .social-links {
+                width: 340px;
+                float: left;
+                padding-right: 35px;
+                margin-top: 0px;
+
+                .links {
+                    margin-top: 40px;
+                    text-align: initial;
+                }
+            }
+
+            .description {
+                width: 560px;
+                float: right;
+            }
+        }
+
+        .skills-section {
+            .skills {
+                text-align: initial;
+            }
+
+            .skill {
+                .skill-bar {
+                    width: 440px;
+                }
+
+                .skill-name {
+                    position: relative;
+                    top: -3px;
+                    width: 340px;
+                    text-align: right;
+                    padding-right: 35px;
+                    margin-left: 0px;
+                    color: #666666;
                 }
             }
         }
