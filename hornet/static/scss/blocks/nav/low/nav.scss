@@ -40,6 +40,11 @@ nav {
             }
         }
 
+        .inactive {
+            color: #666666;
+            cursor: not-allowed;
+        }
+
         a {
             text-decoration: none;
             color: #FFFFFF;
