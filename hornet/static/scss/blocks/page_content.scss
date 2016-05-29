@@ -1,11 +1,10 @@
 .page-content {
-    position: relative;
-    top: -25px;
-    margin-bottom: -25px;
+    margin-top: -25px;
 
     .wrapper {
         background: #FFFFFF;
         position: relative;
+        min-height: 65px;
 
         @import 'page_content/low/shadows';
         @import 'page_content/low/content';
@@ -15,8 +14,8 @@
 
 @media all and (min-width: 768px) {
     .page-content {
-        top: -55px;
-        margin-bottom: -55px;
+        margin-top: -55px;
+        min-height: 130px;
 
         .wrapper {
             @import 'page_content/medium/shadows';

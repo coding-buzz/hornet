@@ -3,12 +3,18 @@ html {
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    height: 100%;
 }
 
 
 body {
     font-family: Roboto, sans-serif;
     font-weight: 300;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 95px;
+    box-sizing: border-box;
+
 
     .wrapper {
         margin: auto 14px;
@@ -23,6 +29,9 @@ body {
 
 @media all and (min-width: 768px) {
     body {
+        padding-top: 25px;
+        padding-bottom: 130px;
+
         .wrapper {
             margin: auto 25px;
         }
@@ -32,6 +41,9 @@ body {
 
 @media all and (min-width: 1050px) {
     body {
+        padding-top: 60px;
+        padding-bottom: 170px;
+
         .wrapper {
             margin: auto;
         }
