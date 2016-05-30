@@ -25,7 +25,7 @@ var homepage = {
         $('.companies-carousel').imageslider({
             slideItems: '.image',
             slideContainer: '.images-wrapper',
-            slideDuration: 0.001
+            slideDuration: 20
         });
     },
 
