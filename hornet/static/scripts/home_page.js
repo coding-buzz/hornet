@@ -67,6 +67,11 @@ var homepage = {
     scaleFeaturedImage: function() {
         var imageHeight = $('.featured-image img').height();
         $('.featured-image').height(imageHeight);
+        if (imageHeight == 0) {
+            setTimeout(function() {
+                this.scaleFeaturedImage();
+            }.bind(this), 100);
+        }
     }
 }
 
