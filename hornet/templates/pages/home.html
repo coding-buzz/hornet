@@ -1,10 +1,12 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static compress %}
 
 
 {% block page_scripts %}
-    <script type="text/javascript" src="{% static "scripts/jquery.imageslider.js" %}"></script>
-    <script type="text/javascript" src="{% static "scripts/home_page.js" %}"></script>
+    {% compress js %}
+        <script type="text/javascript" src="{% static "scripts/jquery.imageslider.js" %}"></script>
+        <script type="text/javascript" src="{% static "scripts/home_page.js" %}"></script>
+    {% endcompress %}
 {% endblock %}
 
 
@@ -106,6 +108,9 @@
                             </div>
                             <div class="image">
                                 <img src="{% static "images/brands/shell.png" %}" />
+                            </div>
+                            <div class="image">
+                                <img src="{% static "images/brands/syncano.png" %}" />
                             </div>
                         </div>
                     </div>
