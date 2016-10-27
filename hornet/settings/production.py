@@ -8,7 +8,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['coding.buzz']
 
 
-COMPRESS_CSS_FILTERS = (
+COMPRESS_CSS_FILTERS += [
     'compressor.filters.cssmin.rCSSMinFilter',
-)
+]
 COMPRESS_ENABLED = True

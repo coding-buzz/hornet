@@ -94,3 +94,10 @@ STATICFILES_FINDERS = [
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+COMPRESS_CSS_FILTERS = [
+    'django_compressor_autoprefixer.AutoprefixerFilter'
+]
+COMPRESS_AUTOPREFIXER_BINARY = os.path.join(BASE_DIR, '..', 'node_modules/postcss-cli/bin/postcss')
+COMPRESS_AUTOPREFIXER_ARGS   = ' --use autoprefixer'
+COMPRESS_ENABLED = True

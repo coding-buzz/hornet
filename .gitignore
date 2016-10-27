@@ -70,3 +70,6 @@ target/
 
 # Collected static files
 /static
+
+# node
+node_modules/

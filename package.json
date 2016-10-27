@@ -1,0 +1,23 @@
+{
+  "name": "hornet",
+  "version": "1.0.0",
+  "description": "hornet",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coding-buzz/hornet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coding-buzz/hornet/issues"
+  },
+  "homepage": "https://github.com/coding-buzz/hornet#readme",
+  "dependencies": {
+    "autoprefixer": "^6.5.1",
+    "postcss-cli": "^2.6.0"
+  }
+}
