@@ -63,8 +63,14 @@
                     </p>
 
                     <ul class="skills">
+                        <li class="skills-legend-wrapper">
+                            <div class="skills-legend">
+                                <div class="breakpoint" data-level="1">Used it</div>
+                                <div class="breakpoint" data-level="2">Mastered it</div>
+                            </div>
+                        </li>
                         {% for skill in skills %}
-                            <li class="skill">
+                            <li class="skill" data-level="{{ skill.level }}">
                                 <span class="skill-name">{{ skill.name }}</span>
                                 <div class="skill-bar skill-{{ skill.level }}-percent"></div>
                             </li>

@@ -5,6 +5,7 @@ var homepage = {
 
     init: function() {
         this.initScrollBarsAnimation();
+        this.initSkillsLegend();
         this.initImageSlider();
         this.initFeaturedImageScale();
     },
@@ -16,6 +17,31 @@ var homepage = {
             this.expandVisibleSkillBars();
             this.removeExpandedSkillBarsFromList();
         }.bind(this));
+    },
+
+    initSkillsLegend: function() {
+        $('.skills-legend .breakpoint').on('mouseenter', function() {
+            $(this).addClass('active');
+            var breakpointLevel = parseInt($(this).data('level'));
+            var from = 0;
+            var to = 50;
+            if (breakpointLevel == 2) {
+                from = 51;
+                to = 100;
+            }
+            $('.skills-legend .breakpoint:not(.active)').addClass('hidden');
+            $('.skills .skill').each(function() {
+                var skillLevel = parseInt($(this).data('level'));
+                if (skillLevel < from || skillLevel > to) {
+                    $(this).addClass('hidden');
+                }
+            });
+        });
+
+        $('.skills-legend .breakpoint').on('mouseleave', function() {
+            $('.skills-legend .breakpoint').removeClass('active').removeClass('hidden');
+            $('.skills .skill').removeClass('hidden');
+        });
     },
 
     initImageSlider: function() {

@@ -3,14 +3,21 @@
         margin-top: 45px;
     }
 
+    .skills-legend-wrapper {
+        height: 30px;
+        width: 570px;
+        font-size: 14px;
+        line-height: 30px;
+    }
+
     .skill-bar {
         width: 570px;
-        height: 22px;
+        height: 24px;
     }
 
     .skill-name {
-        margin-left: 4px;
+        margin-left: 6px;
         font-size: 16px;
-        top: 4px;
+        top: 5px;
     }
 }
