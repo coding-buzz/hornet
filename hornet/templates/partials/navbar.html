@@ -4,12 +4,20 @@
             Coding Buzz
         </span>
         <ul class="menu-items">
-            <li>
-                <a href="/" class="active">Home</a>
-            </li>
-            <li>
-                <span class="inactive">Blog</span>
-            </li>
+            {% with namespace=request.resolver_match.namespace %}
+                <li>
+                    <a href="{% url 'index' %}"
+                       class={% if namespace == '' %}"active"{% endif %}>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'blog:index' %}"
+                       class={% if namespace == 'blog' %}"active"{% endif %}>
+                        Blog
+                    </a>
+                </li>
+            {% endwith %}
         </ul>
     </div>
 </nav>

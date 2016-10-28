@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_styles %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "blog/scss/base.scss" %}" />
+{% endblock %}
+
+
+{% block content %}
+    Blog's base. <br />
+    {% block blog_content %}{% endblock %}
+{% endblock %}
