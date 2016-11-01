@@ -37,14 +37,19 @@ body {
 }
 
 
+@media all and (min-width: 985px) {
+    body {
+        .wrapper {
+            margin: auto;
+        }
+    }
+}
+
+
 @media all and (min-width: 1050px) {
     body {
         padding-top: 60px;
         padding-bottom: 170px;
-
-        .wrapper {
-            margin: auto;
-        }
     }
 }
 

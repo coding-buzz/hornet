@@ -1,0 +1,29 @@
+.blog-index-page {
+    .header-image {
+        width: calc(100% + 28px);
+        height: 260px;
+        background: url(http://lorempixel.com/output/abstract-q-c-960-300-3.jpg) center no-repeat;
+        background-size: cover;
+        margin-left: -14px;
+    }
+}
+
+
+@media all and (min-width: 768px) {
+    .blog-index-page {
+        .header-image {
+            width: calc(100% + 50px);
+            margin-left: -25px;
+        }
+    }
+}
+
+
+@media all and (min-width: 960px) {
+    .blog-index-page {
+        .header-image {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
