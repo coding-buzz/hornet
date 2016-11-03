@@ -1,17 +1,29 @@
 .blog-index-page {
-    .header-image {
+    .posts-wrapper, .header-image {
         width: calc(100% + 28px);
-        height: 260px;
-        background: url(http://lorempixel.com/output/abstract-q-c-960-300-3.jpg) center no-repeat;
-        background-size: cover;
         margin-left: -14px;
+    }
+
+    .header-image {
+        height: 260px;
+        background: url(/static/blog/images/mock/index_header.jpg) center no-repeat;
+        background-size: cover;
+        margin-bottom: 60px;
+    }
+
+    .blog-post {
+        margin: 0 0 60px 0;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
 
 @media all and (min-width: 768px) {
     .blog-index-page {
-        .header-image {
+        .header-image, .posts-wrapper {
             width: calc(100% + 50px);
             margin-left: -25px;
         }
@@ -21,7 +33,7 @@
 
 @media all and (min-width: 960px) {
     .blog-index-page {
-        .header-image {
+        .header-image, .posts-wrapper {
             width: 100%;
             margin-left: 0;
         }

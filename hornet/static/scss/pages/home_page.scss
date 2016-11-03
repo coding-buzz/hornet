@@ -2,6 +2,8 @@
     @import 'home_page/low/about_me_section';
     @import 'home_page/low/skills_section';
     @import 'home_page/low/hire_me_section';
+
+    padding-bottom: 25px;
 }
 
 @media all and (min-width: 768px) {
@@ -9,6 +11,8 @@
         @import 'home_page/medium/about_me_section';
         @import 'home_page/medium/skills_section';
         @import 'home_page/medium/hire_me_section';
+
+        padding-bottom: 60px;
     }
 }
 
@@ -16,5 +20,7 @@
     .home-page {
         @import 'home_page/high/about_me_section';
         @import 'home_page/high/skills_section';
+
+        padding-bottom: 60px;
     }
 }

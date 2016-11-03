@@ -1,0 +1,132 @@
+.blog-post {
+    background-color: #FFF;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 45px 0;
+
+    &:last-of-type {
+        margin-bottom: 30px;
+    }
+
+    .date {
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 14px;
+        color: #999;
+    }
+
+    .title {
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 14px;
+        line-height: 22px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .categories-wrapper {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $blog-accent-color;
+    }
+
+    .featured-image {
+        display: block;
+        width: 100%;
+    }
+
+    .short {
+        padding: 20px;
+        line-height: 22px;
+        font-size: 14px;
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $blog-accent-color;
+        font-weight: 400;
+        position: relative;
+        white-space: nowrap;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            overflow: hidden;
+            transition: width 0.5s;
+            border-bottom: 1px solid $blog-accent-color;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+
+    .continue-reading-button {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+}
+
+
+@media all and (min-width: 768px) {
+    .blog-post {
+        .date {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 16px;
+            padding: 0px 30px;
+            line-height: 28px
+        }
+
+        .categories-wrapper {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .short {
+            font-size: 16px;
+            line-height: 30px;
+            padding: 30px;
+        }
+
+        .continue-reading-button {
+            font-size: 18px;
+            margin-left: 30px;
+        }
+    }
+}
+
+@media all and (min-width: 960px) {
+    .blog-post {
+        .title {
+            padding: 0px 110px;
+        }
+
+        .short {
+            font-size: 18px;
+            line-height: 30px;
+            padding: 30px 110px;
+        }
+
+        .continue-reading-button {
+            margin-left: 110px;
+        }
+    }
+}

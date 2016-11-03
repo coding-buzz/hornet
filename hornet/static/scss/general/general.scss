@@ -10,7 +10,7 @@ body {
     font-weight: 300;
     min-height: 100%;
     position: relative;
-    padding-bottom: 95px;
+    padding-bottom: 70px;
     box-sizing: border-box;
 
 
@@ -28,7 +28,7 @@ body {
 @media all and (min-width: 768px) {
     body {
         padding-top: 25px;
-        padding-bottom: 130px;
+        padding-bottom: 100px;
 
         .wrapper {
             margin: auto 25px;
@@ -37,7 +37,7 @@ body {
 }
 
 
-@media all and (min-width: 985px) {
+@media all and (min-width: 1010px) {
     body {
         .wrapper {
             margin: auto;
@@ -49,7 +49,7 @@ body {
 @media all and (min-width: 1050px) {
     body {
         padding-top: 60px;
-        padding-bottom: 170px;
+        padding-bottom: 140px;
     }
 }
 
