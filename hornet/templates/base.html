@@ -20,7 +20,10 @@
         {% block content %}{% endblock %}
         {% include "partials/footer.html" %}
 
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        {% block page_scripts %}{% endblock %}
+        {% compress js %}
+            <script type="text/javascript" src="{% static "scripts/vendor/jquery-1.12.4.js" %}"></script>
+            <script type="text/javascript" src="{% static "scripts/navbar.js" %}"></script>
+            {% block page_scripts %}{% endblock %}
+        {% endcompress %}
     </body>
 </html>
