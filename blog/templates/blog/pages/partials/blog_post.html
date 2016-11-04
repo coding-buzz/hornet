@@ -11,8 +11,13 @@
     </h2>
 
     <div class="categories-wrapper">
-        <a href="#">Curabitur</a>,
-        <a href="#">Porttitor</a>
+        {% for category in blog_post.categories.all %}
+            <span class="category">
+                <a href="#">
+                    {{ category.name }}
+                </a>
+            </span>
+        {% endfor %}
     </div>
 
     <img src="{% get_media_prefix %}{{ blog_post.featured_image }}" class="featured-image" />
@@ -21,7 +26,14 @@
         {{ blog_post.short }}
     </div>
 
-    <a href="#" class="continue-reading-button">
-        Continue reading <span class="icon-right" />
-    </a>
+    {% if show_full_content %}
+        <div class="blog-post-content full">
+            Full content here.
+        </div>
+    {% else %}
+        <a href="{% url 'blog:blog_post_view' blog_post.id %}" class="continue-reading-button">
+            Continue reading <span class="icon-right" />
+        </a>
+    {% endif %}
+
 </div>

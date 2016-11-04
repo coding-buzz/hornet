@@ -1,6 +1,6 @@
 $(function() {
     var nav = $('nav');
-    var scrollDistanceThreshold = 100;
+    var scrollDistanceThreshold = 55;
 
     $(document).scroll(function() {
         var scrollDistance = $(this).scrollTop();

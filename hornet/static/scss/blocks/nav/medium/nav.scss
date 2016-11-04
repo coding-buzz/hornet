@@ -2,7 +2,7 @@ nav {
     height: 40px;
     background: #FFFFFF;
     padding: 25px 0px;
-    transition: padding .3s;
+    transition: padding .2s;
 
     &:after {
         display: none;
@@ -40,6 +40,6 @@ nav {
     &.mini {
         padding: 5px 0;
         box-shadow: 0 3px 5px 0 rgba(50, 50, 50, .5);
-        transition: padding .3s, box-shadow .3s .3s;
+        transition: padding .2s, box-shadow .2s .2s;
     }
 }

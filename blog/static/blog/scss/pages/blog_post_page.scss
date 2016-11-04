@@ -1,0 +1,19 @@
+.blog-post-page {
+    padding-top: 35px;
+    padding-bottom: 0;
+
+    .posts-wrapper {
+        .blog-post {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+@media all and (min-width: 768px) {
+    .blog-post-page {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}

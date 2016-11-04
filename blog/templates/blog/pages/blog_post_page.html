@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+    <div class="page-content blog-page blog-post-page">
+        <div class="wrapper">
+            <div class="posts-wrapper">
+                {% include 'blog/pages/partials/blog_post.html' with blog_post=blog_post show_full_content=True %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -7,4 +7,29 @@
     .wrapper {
         background: initial;
     }
+
+    .posts-wrapper {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+    }
+}
+
+
+@media all and (min-width: 768px) {
+    .blog-page {
+        .posts-wrapper {
+            width: calc(100% + 50px);
+            margin-left: -25px;
+        }
+    }
+}
+
+
+@media all and (min-width: 960px) {
+    .blog-page {
+        .posts-wrapper {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
 }
