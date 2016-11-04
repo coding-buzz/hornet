@@ -95,3 +95,7 @@ STATICFILES_FINDERS = [
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'

@@ -1,40 +1,13 @@
 {% extends "blog/base.html" %}
 
-{% load static %}
-
 
 {% block content %}
     <div class="page-content blog-page blog-index-page">
         <div class="wrapper">
             <div class="header-image"></div>
             <div class="posts-wrapper">
-                {% for i in '     ' %}
-
-                    <div class="blog-post">
-                        <div class="date">
-                            May 28, 2016
-                        </div>
-
-                        <h2 class="title">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing.
-                        </h2>
-
-                        <div class="categories-wrapper">
-                            <a href="#">Curabitur</a>,
-                            <a href="#">porttitor</a>
-                        </div>
-
-                        <img src="{% static 'blog/images/mock/blog_image.jpg' %}" class="featured-image" />
-
-                        <div class="blog-post-content short">
-                            Fusce pretium malesuada odio eget semper. Mauris vestibulum, massa et laoreet aliquet, diam lorem tempor lorem, eget commodo leo quam tempus metus. Vivamus dictum aliquam dui, nec aliquet nibh accumsan nec. Aenean augue sem, dictum id varius et, vulputate porttitor turpis. Duis blandit libero ante, ut molestie dui commodo non. Aliquam eu nibh tristique massa vehicula ultricies. Vestibulum nec ultricies mi, id convallis sem.
-                        </div>
-
-                        <a href="#" class="continue-reading-button">
-                            Continue reading <span class="icon-right" />
-                        </a>
-                    </div>
-
+                {% for blog_post in blog_posts %}
+                    {% include 'blog/pages/partials/blog_post.html' with blog_post=blog_post %}
                 {% endfor %}
             </div>
         </div>
