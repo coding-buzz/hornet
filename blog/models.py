@@ -22,6 +22,7 @@ class BlogPost(models.Model):
     published_at = models.DateTimeField(blank=True, null=True)
     featured_image = models.ImageField(upload_to=utils.upload_directory_path)
     short = models.TextField()
+    content = models.TextField()
     categories = models.ManyToManyField(Category)
 
     class Meta:

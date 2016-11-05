@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
+    'ckeditor',
     'hornet',
     'blog',
 ]
@@ -99,3 +100,17 @@ COMPRESS_PRECOMPILERS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Format', 'Styles', 'Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', 'Table'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+        'format_tags': 'h1;h2;p'
+    },
+}

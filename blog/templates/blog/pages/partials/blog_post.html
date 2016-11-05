@@ -28,7 +28,7 @@
 
     {% if show_full_content %}
         <div class="blog-post-content full">
-            Full content here.
+            {{ blog_post.content|safe }}
         </div>
     {% else %}
         <a href="{% url 'blog:blog_post_view' blog_post.id %}" class="continue-reading-button">
