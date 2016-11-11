@@ -11,6 +11,12 @@ class ContentImageInline(admin.TabularInline):
     extra = 1
 
 
+class SourceCodeInline(admin.TabularInline):
+    model = models.SourceCode
+    readonly_fields = ('id', )
+    extra = 1
+
+
 class BlogPostForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorWidget())
 
@@ -22,7 +28,7 @@ class BlogPostForm(forms.ModelForm):
 class BlogPostAdmin(admin.ModelAdmin):
     form = BlogPostForm
     filter_horizontal = ('categories', )
-    inlines = (ContentImageInline, )
+    inlines = (ContentImageInline, SourceCodeInline)
 
 
 admin.site.register(models.BlogPost, BlogPostAdmin)

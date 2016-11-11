@@ -1,9 +1,12 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static blog_post %}
 
 
 {% block page_styles %}
     <link rel="stylesheet" type="text/x-scss" href="{% static "blog/scss/base.scss" %}" />
+    <style type="text/css">
+        {% get_pygments_styles %}
+    </style>
 {% endblock %}
 
 

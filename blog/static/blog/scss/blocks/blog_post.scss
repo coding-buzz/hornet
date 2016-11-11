@@ -158,6 +158,18 @@
             margin: auto;
         }
 
+        p {
+            min-height: 1px;
+        }
+
+        .highlight {
+            margin-top: -20px;
+            margin-bottom: -20px;
+            font-family: 'Ubuntu Mono', monospace;
+            overflow: auto;
+            padding: 0 8px;
+        }
+
         .yt-frame {
             width: 100%;
             display: block;
@@ -226,6 +238,11 @@
 
             & > * {
                 margin: 30px 0;
+            }
+
+            .highlight {
+                margin-top: -30px;
+                margin-bottom: -30px;
             }
         }
 

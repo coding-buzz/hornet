@@ -36,3 +36,11 @@ class ContentImage(models.Model):
     image = models.ImageField(upload_to=utils.upload_directory_path)
     title = models.CharField(max_length=255)
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='images')
+
+
+class SourceCode(models.Model):
+    _LANGUAGE_CHOICES = utils.get_available_lexers()
+
+    language = models.CharField(max_length=40, choices=_LANGUAGE_CHOICES)
+    content = models.TextField()
+    blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='source_codes')
