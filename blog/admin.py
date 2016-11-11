@@ -5,13 +5,13 @@ from ckeditor.widgets import CKEditorWidget
 import models
 
 
-class ContentImageInline(admin.TabularInline):
+class ContentImageInline(admin.StackedInline):
     model = models.ContentImage
     readonly_fields = ('id', )
     extra = 1
 
 
-class SourceCodeInline(admin.TabularInline):
+class SourceCodeInline(admin.StackedInline):
     model = models.SourceCode
     readonly_fields = ('id', )
     extra = 1
