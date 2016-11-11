@@ -30,3 +30,9 @@ class BlogPost(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class ContentImage(models.Model):
+    image = models.ImageField(upload_to=utils.upload_directory_path)
+    title = models.CharField(max_length=255)
+    blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='images')

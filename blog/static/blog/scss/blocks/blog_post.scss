@@ -150,6 +150,13 @@
         ul {
             list-style-type: disc;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
     }
 
     a {

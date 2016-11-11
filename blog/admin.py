@@ -5,6 +5,12 @@ from ckeditor.widgets import CKEditorWidget
 import models
 
 
+class ContentImageInline(admin.TabularInline):
+    model = models.ContentImage
+    readonly_fields = ('id', )
+    extra = 1
+
+
 class BlogPostForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorWidget())
 
@@ -16,6 +22,7 @@ class BlogPostForm(forms.ModelForm):
 class BlogPostAdmin(admin.ModelAdmin):
     form = BlogPostForm
     filter_horizontal = ('categories', )
+    inlines = (ContentImageInline, )
 
 
 admin.site.register(models.BlogPost, BlogPostAdmin)
