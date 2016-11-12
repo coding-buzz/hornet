@@ -1,5 +1,4 @@
 $(function() {
-    console.log('start');
     var iframeRatio = 0.5625;
 
     function resizeYoutubeFrames() {

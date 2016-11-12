@@ -1,0 +1,46 @@
+<div class="pagination-wrapper">
+    <div class="pagination">
+
+        {# previous page button #}
+
+        {% if blog_posts.has_previous %}
+            <a class="pagination-button" href="?page={{ blog_posts.previous_page_number }}">
+                <span class="icon-left"></span>
+            </a>
+        {% else %}
+            <span class="pagination-button disabled">
+                <span class="icon-left"></span>
+            </span>
+        {% endif %}
+
+
+        {# middle buttons #}
+
+        {% for page in page_range %}
+            {% if page == blog_posts.number %}
+                <span class="pagination-button active">
+                    {{ page }}
+                </span>
+            {% else %}
+                <a class="pagination-button" href="?page={{ page }}">
+                    {{ page }}
+                </a>
+            {% endif %}
+        {% endfor %}
+
+
+        {# next page button #}
+
+        {% if blog_posts.has_next %}
+            <a class="pagination-button" href="?page={{ blog_posts.next_page_number }}">
+                <span class="icon-right"></span>
+            </a>
+        {% else %}
+            <span class="pagination-button disabled">
+                <span class="icon-right"></span>
+            </span>
+        {% endif %}
+
+        <div class="clearfix"></div>
+    </div>
+</div>

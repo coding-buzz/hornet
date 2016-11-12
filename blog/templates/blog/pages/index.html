@@ -10,6 +10,9 @@
                     {% include 'blog/pages/partials/blog_post.html' with blog_post=blog_post %}
                 {% endfor %}
             </div>
+            {% if blog_posts.paginator.num_pages > 1 %}
+                {% include 'blog/pages/partials/pagination.html' %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
