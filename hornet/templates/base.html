@@ -15,7 +15,7 @@
         {% endcompress %}
     </head>
 
-    <body>
+    <body {% block bodyclass %}{% endblock %}>
         {% include "partials/navbar.html" %}
         {% block content %}{% endblock %}
         {% include "partials/footer.html" %}
