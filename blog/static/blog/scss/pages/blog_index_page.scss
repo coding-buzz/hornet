@@ -1,13 +1,20 @@
 .blog-index-page {
-    .header-image {
+    .menubar, .header-image {
         width: calc(100% + 28px);
         margin-left: -14px;
     }
 
     .header-image {
         height: 260px;
-        background: url(/static/blog/images/mock/index_header.jpg) center no-repeat;
+        background: url(/static/blog/images/mock/header.jpg) center no-repeat;
         background-size: cover;
+        margin-bottom: 60px;
+        text-align: center;
+        line-height: 260px;
+    }
+
+    .menubar {
+        margin-top: -60px;
         margin-bottom: 60px;
     }
 
@@ -29,7 +36,11 @@
 
 @media all and (min-width: 768px) {
     .blog-index-page {
-        .header-image, .posts-wrapper {
+        .chosen-category-wrapper {
+            font-size: 24px;
+        }
+
+        .header-image, .posts-wrapper, .menubar {
             width: calc(100% + 50px);
             margin-left: -25px;
         }
@@ -39,7 +50,7 @@
 
 @media all and (min-width: 960px) {
     .blog-index-page {
-        .header-image, .posts-wrapper {
+        .header-image, .posts-wrapper, .menubar {
             width: 100%;
             margin-left: 0;
         }

@@ -1,0 +1,64 @@
+.menubar {
+    background: #FFF;
+
+    .expander, .options {
+        text-align: center;
+        line-height: 22px;
+    }
+
+    .expander {
+        padding: 8px 0;
+        font-size: 18px;
+        transition: background .25s;
+
+        span {
+            font-size: 16px;
+            display: inline-block;
+            transition: transform .25s;
+            height: 21px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &.expanded {
+        .expander {
+            background-color: $blog-accent-color;
+            color: #FFF;
+
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .options {
+        display: none;
+        padding: 6px 0;
+
+        & > li {
+            font-size: 16px;
+            padding: 6px 0;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 300;
+            font-size: 16px;
+        }
+    }
+
+    .option-name {
+        text-transform: uppercase;
+    }
+
+    .links {
+        & > li {
+            padding: 6px 0;
+        }
+    }
+}

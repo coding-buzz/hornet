@@ -13,7 +13,7 @@
     <div class="categories-wrapper">
         {% for category in blog_post.categories.all %}
             <span class="category">
-                <a href="#">
+                <a href="{% url 'blog:category_view' category.name %}">
                     {{ category.name }}
                 </a>
             </span>

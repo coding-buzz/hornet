@@ -2,9 +2,12 @@
 
 
 {% block content %}
-    <div class="page-content blog-page blog-index-page">
+    <div class="page-content blog-page blog-index-page" xmlns="http://www.w3.org/1999/html">
         <div class="wrapper">
             <div class="header-image"></div>
+
+            {% include 'blog/pages/partials/menubar.html' %}
+
             <div class="posts-wrapper">
                 {% for blog_post in blog_posts %}
                     {% include 'blog/pages/partials/blog_post.html' with blog_post=blog_post %}
