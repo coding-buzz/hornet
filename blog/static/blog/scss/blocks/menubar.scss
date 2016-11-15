@@ -1,5 +1,6 @@
 .menubar {
     background: #FFF;
+    box-sizing: border-box;
 
     .expander, .options {
         text-align: center;
@@ -11,6 +12,10 @@
         font-size: 18px;
         transition: background .25s;
 
+        &:not(.clickable) {
+            display: none;
+        }
+
         span {
             font-size: 16px;
             display: inline-block;
@@ -18,13 +23,13 @@
             height: 21px;
         }
 
-        &:hover {
+        &.clickable:hover {
             cursor: pointer;
         }
     }
 
     &.expanded {
-        .expander {
+        .expander.clickable {
             background-color: $blog-accent-color;
             color: #FFF;
 
@@ -54,11 +59,112 @@
 
     .option-name {
         text-transform: uppercase;
+
+        & > span {
+            display: none;
+        }
     }
 
     .links {
         & > li {
             padding: 6px 0;
+        }
+    }
+}
+
+
+@media all and (min-width: 960px) {
+    .menubar {
+        height: 38px;
+        padding: 0 30px;
+
+        .expander, .options {
+            display: inline-block;
+            padding: 0;
+            height: 38px;
+            line-height: 38px;
+            float: left;
+            font-size: 16px;
+        }
+
+        .expander {
+            margin-right: 25px;
+
+            &.clickable {
+                display: none;
+            }
+
+            &:not(.clickable) {
+                display: inline-block;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        .options {
+            display: inline-block !important;
+
+            & > li {
+                display: inline-block;
+                padding: 0;
+                line-height: 38px;
+                font-weight: 300;
+                float: left;
+
+                &:hover {
+                    .option-name {
+                        background-color: $blog-accent-color;
+                        color: #FFF;
+                    }
+
+                    .links {
+                        transform: translate(0, 0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .option-name {
+            text-transform: none;
+            transition: background .1s;
+            padding: 0 12px;
+            background: #FFF;
+            position: relative;
+            z-index: 50;
+            text-align: left;
+
+            & > span {
+                display: inline;
+            }
+        }
+
+        .links {
+            opacity: 0;
+            transform: translate(0, -100%);
+            transition: all 0.25s;
+            background: #FFF;
+            box-shadow: 0 3px 5px 0 rgba(50, 50, 50, .5);
+
+            & > li {
+                text-align: left;
+                padding: 0 12px;
+                transition: background .1s;
+
+                a {
+                    display: block;
+                }
+
+                &:hover {
+                    background-color: $blog-accent-color;
+
+                    a {
+                        color: #FFF;
+                    }
+                }
+            }
         }
     }
 }

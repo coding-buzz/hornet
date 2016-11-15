@@ -1,5 +1,6 @@
 <div class="menubar">
-    <div class="expander">
+
+    <div class="expander clickable">
         {% if category %}
             Category: {{ category.name }}
         {% else %}
@@ -7,9 +8,19 @@
         {% endif %}
         <span class="icon-down-open-big"></span>
     </div>
+
+    {% if category %}
+        <div class="expander">
+            Category: {{ category.name }}
+        </div>
+    {% endif %}
+
     <ol class="options">
         <li>
-            <div class="option-name">Categories</div>
+            <div class="option-name">
+                Categories
+                <span class="icon-down-open-big"></span>
+            </div>
             <ol class="links">
                 <li>
                     <a href="{% url 'blog:index' %}">
@@ -24,18 +35,19 @@
                     </li>
                 {% endfor %}
             </ol>
-
         </li>
+
         <li>
-            <div class="option-name">Pages</div>
+            <div class="option-name">
+                Pages
+                <span class="icon-down-open-big"></span>
+            </div>
             <ol class="links">
-                {% for category in categories %}
-                    <li>
-                        <a href="#">
-                            {{ category.name }}
-                        </a>
-                    </li>
-                {% endfor %}
+                <li>
+                    <a href="#">
+                        Subscribe
+                    </a>
+                </li>
             </ol>
         </li>
     </ol>
