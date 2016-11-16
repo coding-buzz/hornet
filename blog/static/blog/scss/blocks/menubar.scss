@@ -73,7 +73,7 @@
 }
 
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 600px) {
     .menubar {
         height: 38px;
         padding: 0 30px;
@@ -89,6 +89,9 @@
 
         .expander {
             margin-right: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #333;
 
             &.clickable {
                 display: none;
@@ -107,22 +110,39 @@
             display: inline-block !important;
 
             & > li {
-                display: inline-block;
+                display: block;
                 padding: 0;
                 line-height: 38px;
+                height: 38px;
                 font-weight: 300;
                 float: left;
+                margin-right: 3px;
 
-                &:hover {
+                &.hovered {
                     .option-name {
                         background-color: $blog-accent-color;
                         color: #FFF;
+
+                        span {
+                            transform: rotate(180deg);
+                        }
                     }
 
                     .links {
                         transform: translate(0, 0);
                         opacity: 1;
                     }
+                }
+
+                &:first-of-type .option-name:before {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 30px;
+                    background-color: #F5F5F5;
+                    position: absolute;
+                    top: 4px;
+                    left: -2px;
                 }
             }
         }
@@ -137,7 +157,20 @@
             text-align: left;
 
             & > span {
-                display: inline;
+                display: block;
+                float: right;
+                transition: transform .25s;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 30px;
+                background-color: #F5F5F5;
+                position: absolute;
+                top: 4px;
+                right: -2px;
             }
         }
 
