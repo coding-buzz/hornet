@@ -20,6 +20,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=120)
     created_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)
+    publication_notified = models.BooleanField(default=False)
     featured_image = models.ImageField(upload_to=utils.upload_directory_path)
     short = models.TextField()
     content = models.TextField()

@@ -15,6 +15,7 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('blog_post_id', type=int)
+        parser.add_argument('--force', action='store_const', const=True)
     
     def handle(self, *args, **options):
         if not settings.MAILCHIMP_SEND_EMAILS:
@@ -22,10 +23,16 @@ class Command(BaseCommand):
             return
         blog_post_id = options['blog_post_id']
         blog_post = BlogPost.objects.get(id=blog_post_id)
+        if blog_post.publication_notified and not options['force']:
+            print 'Blog post publication has been notified in the past. Skipping.'
+            print 'To send notification despite this use --force flag.'
+            return
         campaign_id = self._create_campaign(blog_post)
         self._update_campaign_html(campaign_id, blog_post)
         self._CLIENT.campaigns.actions.send(campaign_id=campaign_id)
         print 'Blog post {} publication notification has been sent.'.format(blog_post_id)
+        blog_post.publication_notified = True
+        blog_post.save()
 
     def _create_campaign(self, blog_post):
         mailing_list_id = self._get_mailing_list_id()
