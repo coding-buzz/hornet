@@ -34,3 +34,10 @@ def blog_post_view(request, blog_post_id):
         'blog_post': blog_post
     }
     return render(request, 'blog/pages/blog_post_page.html', context=context)
+
+
+def notification_preview(request, blog_post_id):
+    context = {
+        'blog_post': models.BlogPost.objects.get(id=blog_post_id)
+    }
+    return render(request, 'blog/mailer/publication_notification.html', context=context)

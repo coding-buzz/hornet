@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Buzz | {{ blog_post.title }}</title>
+</head>
+
+<body style="background-color: #F1F1F1; font-family: Arial, sans-serif; padding: 30px;">
+    <table style="border: none; width: 100%; background-color: #FFF;"
+            cellspacing="0"
+            cellpadding="0"
+            align="center">
+        <tr>
+            <td style="text-align: center; padding: 30px; font-size: 20px; line-height 26px;">
+                {{ blog_post.title }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="{{ BASE_URL }}{% get_media_prefix %}{{ blog_post.featured_image }}"
+                        alt="Featured image"
+                        style="width: 100%; display: block;">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 30px; color: #333; text-align: justify; font-size: 16px; line-height: 22px;">
+                {{ blog_post.short }}
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding-bottom: 30px;">
+                <a href="{{ BASE_URL }}{% url 'blog:blog_post_view' blog_post.id %}"
+                    style="text-decoration: none; display: inline-block; padding: 20px; color: #3D72A4; border: 2px solid #3D72A4;">
+                    KEEP READING
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
