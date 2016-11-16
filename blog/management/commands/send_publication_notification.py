@@ -52,7 +52,7 @@ class Command(BaseCommand):
 
     def _get_mailing_list_id(self):
         lists = self._CLIENT.lists.all()['lists']
-        list_id = filter(lambda x: x['name'] == settings.MAILCHIP_SUB_LIST_NAME, lists)[0]['id']
+        list_id = filter(lambda x: x['name'] == settings.MAILCHIMP_SUB_LIST_NAME, lists)[0]['id']
         return list_id
 
     def _update_campaign_html(self, campaign_id, blog_post):

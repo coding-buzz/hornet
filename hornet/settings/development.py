@@ -8,4 +8,5 @@ BASE_URL = 'http://localhost:8000'
 
 MAILCHIMP_SEND_EMAILS = False
 MAILCHIMP_API_KEY = 'top-secret'
-MAILCHIP_SUB_LIST_NAME = 'top-secret'
+MAILCHIMP_SUB_LIST_NAME = 'top-secret'
+MAILCHIMP_SUBSCRIPTION_FORM_URL = '#'

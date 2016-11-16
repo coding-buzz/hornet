@@ -17,4 +17,4 @@ BASE_URL = 'http://coding.buzz'
 
 MAILCHIMP_SEND_EMAILS = True
 MAILCHIMP_API_KEY = os.environ['MAILCHIMP_API_KEY']
-MAILCHIP_SUB_LIST_NAME = 'Coding Buzz Subscriptions'
+MAILCHIMP_SUB_LIST_NAME = 'Coding Buzz Subscriptions'
