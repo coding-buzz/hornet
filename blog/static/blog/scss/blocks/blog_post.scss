@@ -176,7 +176,7 @@
         }
     }
 
-    a {
+    a:not(.fb-share-link) {
         text-decoration: none;
         text-transform: uppercase;
         color: $blog-accent-color;
@@ -205,8 +205,25 @@
         }
     }
 
+    .fb-share-link {
+        color: #CCC;
+        font-size: 22px;
+        margin-top: -4px;
+        transition: color .25s;
+
+        &:hover {
+            color: $blog-accent-color;
+        }
+    }
+
+    .short-footer {
+        padding: 0 20px;
+        .fb-share-link {
+            float: right;
+        }
+    }
+
     .continue-reading-button {
-        margin-left: 20px;
         font-size: 14px;
     }
 }
@@ -248,7 +265,15 @@
 
         .continue-reading-button {
             font-size: 18px;
-            margin-left: 30px;
+        }
+
+        .fb-share-link {
+            font-size: 28px;
+            margin-top: -5px;
+        }
+
+        .short-footer {
+            padding: 0 30px;
         }
     }
 }
@@ -266,8 +291,8 @@
             padding: 30px 110px;
         }
 
-        .continue-reading-button {
-            margin-left: 110px;
+        .short-footer {
+            padding: 0 110px;
         }
     }
 }

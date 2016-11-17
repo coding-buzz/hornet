@@ -31,9 +31,15 @@
             {{ blog_post.content|include_all_elements|safe }}
         </div>
     {% else %}
-        <a href="{% url 'blog:blog_post_view' blog_post.id %}" class="continue-reading-button">
-            Continue reading <span class="icon-right" />
-        </a>
+        <div class="short-footer">
+            <a href="{% url 'blog:blog_post_view' blog_post.id %}" class="continue-reading-button">
+                Continue reading <span class="icon-right" />
+            </a>
+            <a target="_blank"
+               href="http://www.facebook.com/sharer/sharer.php?u={{ BASE_URL }}{% url 'blog:blog_post_view' blog_post.id %}"
+               class="fb-share-link">
+                <span class="icon-facebook-official"></span>
+            </a>
+        </div>
     {% endif %}
-
 </div>
