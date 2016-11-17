@@ -13,6 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'compressor',
     'ckeditor',
+    'django_object_actions',
     'hornet',
     'blog',
 ]

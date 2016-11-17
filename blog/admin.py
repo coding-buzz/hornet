@@ -1,9 +1,12 @@
 from django import forms
 from django.contrib import admin
+from django.shortcuts import redirect
+
 from ckeditor.widgets import CKEditorWidget
+from django_object_actions import DjangoObjectActions
 
 import models
-
+import views
 
 class ContentImageInline(admin.StackedInline):
     model = models.ContentImage
@@ -25,10 +28,17 @@ class BlogPostForm(forms.ModelForm):
         model = models.BlogPost
 
 
-class BlogPostAdmin(admin.ModelAdmin):
+class BlogPostAdmin(DjangoObjectActions, admin.ModelAdmin):
     form = BlogPostForm
     filter_horizontal = ('categories', )
     inlines = (ContentImageInline, SourceCodeInline)
+
+    def preview(self, request, obj):
+        response = redirect('blog:blog_post_view', blog_post_id=obj.id)
+        response['Location'] += '?preview_key={}'.format(obj.preview_key)
+        return response
+
+    change_actions = ('preview', )
 
 
 admin.site.register(models.BlogPost, BlogPostAdmin)

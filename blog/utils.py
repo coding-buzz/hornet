@@ -21,3 +21,7 @@ def get_page_range(active_page, pages_count):
         diff = 5 - (last_page - first_page)
         first_page = max(1, first_page - diff)
     return range(first_page, last_page)
+
+
+def generate_preview_key():
+    return str(uuid.uuid4())

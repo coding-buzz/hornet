@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 import models
 from utils import get_page_range
@@ -13,7 +13,7 @@ def index_view(request, category_name=None):
         context.update({
             'category': category
         })
-    blog_posts = category.blogpost_set.all() if category else models.BlogPost.objects.all()
+    blog_posts = (category.blogpost_set if category else models.BlogPost.objects).exclude(published_at__isnull=True)
     paginator = Paginator(blog_posts, 5)
     page = int(request.GET.get('page') or 1)
     context.update({
@@ -30,6 +30,8 @@ def category_view(request, category_name):
 
 def blog_post_view(request, blog_post_id):
     blog_post = models.BlogPost.objects.get(id=blog_post_id)
+    if blog_post.published_at == None and blog_post.preview_key != request.GET.get('preview_key', ''):
+        return redirect('blog:index')
     context = {
         'blog_post': blog_post
     }

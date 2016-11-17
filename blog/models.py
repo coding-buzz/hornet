@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import uuid
 
 from django.db import models
 
@@ -25,6 +26,7 @@ class BlogPost(models.Model):
     short = models.TextField()
     content = models.TextField()
     categories = models.ManyToManyField(Category)
+    preview_key = models.CharField(max_length=100, default=utils.generate_preview_key)
 
     class Meta:
         ordering = ['-published_at']
