@@ -2,6 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 
 import models
+import forms
 from utils import get_page_range
 
 
@@ -28,13 +29,18 @@ def category_view(request, category_name):
     return index_view(request, category_name)
 
 
-def blog_post_view(request, blog_post_id):
+def blog_post_view(request, blog_post_id, comment_form=None):
     blog_post = models.BlogPost.objects.get(id=blog_post_id)
-    if blog_post.published_at == None and blog_post.preview_key != request.GET.get('preview_key', ''):
+    if blog_post.published_at is None and blog_post.preview_key != request.GET.get('preview_key', ''):
         return redirect('blog:index')
     context = {
-        'blog_post': blog_post
+        'blog_post': blog_post,
+        'comment_form': comment_form or forms.CommentForm(),
     }
+    if comment_form:
+        context.update({
+            'anchor': 'comments-section'
+        })
     return render(request, 'blog/pages/blog_post_page.html', context=context)
 
 
@@ -43,3 +49,14 @@ def notification_preview(request, blog_post_id):
         'blog_post': models.BlogPost.objects.get(id=blog_post_id)
     }
     return render(request, 'blog/mailer/publication_notification.html', context=context)
+
+
+def add_comment(request, blog_post_id):
+    form = forms.CommentForm(request.POST)
+    if form.is_valid():
+        form.instance.blog_post = models.BlogPost.objects.get(id=blog_post_id)
+        form.save()
+        response = redirect('blog:blog_post_view', blog_post_id=blog_post_id)
+        response['Location'] += '#{}'.format(form.instance.get_anchor_name())
+        return response
+    return blog_post_view(request, blog_post_id, comment_form=form)

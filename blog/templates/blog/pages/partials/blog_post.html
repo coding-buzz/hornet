@@ -33,7 +33,7 @@
     {% else %}
         <div class="short-footer">
             <a href="{% url 'blog:blog_post_view' blog_post.id %}" class="continue-reading-button">
-                Continue reading <span class="icon-right" />
+                Continue reading <span class="icon-right"></span>
             </a>
             <a target="_blank"
                href="http://www.facebook.com/sharer/sharer.php?u={{ BASE_URL }}{% url 'blog:blog_post_view' blog_post.id %}"
@@ -43,3 +43,54 @@
         </div>
     {% endif %}
 </div>
+
+
+{% if show_full_content %}
+    <div class="comments-section">
+        <div id="comments-section"></div>
+        <h2>Share Your thoughts</h2>
+
+        <form action="{% url 'blog:add_comment' blog_post.id %}" method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="name" title="name" placeholder="Name"
+                   class="{% if comment_form.name.errors %}has-errors{% endif %}"
+                   value="{{ comment_form.name.value|default_if_none:'' }}">
+            <div class="errors">
+                {{ comment_form.name.errors.0 }}
+            </div>
+
+            <textarea name="content" title="content"
+                      class="{% if comment_form.content.errors %}has-errors{% endif %}"
+                      placeholder="Content">{{ comment_form.content.value|default_if_none:'' }}</textarea>
+            <div class="errors">
+                {{ comment_form.name.errors.0 }}
+            </div>
+
+            <div class="submit-button-wrapper">
+                <button type="submit">Add comment</button>
+            </div>
+        </form>
+
+        {% if blog_post.comments.count %}
+            <div class="comments">
+                {% for comment in blog_post.comments.all %}
+                    <div class="comment">
+                        <div id="{{ comment.get_anchor_name }}" class="comment-anchor"></div>
+                        <div class="comment-header">
+                            <div class="name">
+                                {{ comment.name }} says:
+                            </div>
+                            <div class="date">
+                                {{ comment.created_at|date:'d/m/Y' }}, {{ comment.created_at|date:'H:i' }}
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            {{ comment.content }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

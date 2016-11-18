@@ -25,5 +25,12 @@
             <script type="text/javascript" src="{% static "scripts/navbar.js" %}"></script>
             {% block page_scripts %}{% endblock %}
         {% endcompress %}
+        {% if anchor %}
+            <script type="text/javascript">
+                $(function() {
+                    window.location.hash = '{{ anchor }}';
+                });
+            </script>
+        {% endif %}
     </body>
 </html>

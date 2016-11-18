@@ -47,3 +47,16 @@ class SourceCode(models.Model):
     language = models.CharField(max_length=40, choices=_LANGUAGE_CHOICES)
     content = models.TextField()
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='source_codes')
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=100)
+    content = models.TextField()
+    blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comments')
+    created_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['created_at']
+
+    def get_anchor_name(self):
+        return 'comment-{}'.format(self.id)
