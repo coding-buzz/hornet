@@ -32,7 +32,7 @@ class BlogPost(models.Model):
         ordering = ['-published_at']
 
     def __unicode__(self):
-        return self.title
+        return (self.title[:30] + '...') if len(self.title) > 30 else self.title
 
 
 class ContentImage(models.Model):
