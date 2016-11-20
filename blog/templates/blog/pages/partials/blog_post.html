@@ -29,17 +29,16 @@
     {% if show_full_content %}
         <div class="blog-post-content full">
             {{ blog_post.content|include_all_elements|safe }}
+
+            {% include 'blog/pages/partials/_share_on_facebook.html' %}
         </div>
     {% else %}
         <div class="short-footer">
             <a href="{% url 'blog:blog_post_view' blog_post.id %}" class="continue-reading-button">
                 Continue reading <span class="icon-right"></span>
             </a>
-            <a target="_blank"
-               href="http://www.facebook.com/sharer/sharer.php?u={{ BASE_URL }}{% url 'blog:blog_post_view' blog_post.id %}"
-               class="fb-share-link">
-                <span class="icon-facebook-official"></span>
-            </a>
+
+            {% include 'blog/pages/partials/_share_on_facebook.html' %}
         </div>
     {% endif %}
 </div>
