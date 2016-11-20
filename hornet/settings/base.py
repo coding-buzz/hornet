@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     'compressor',
     'ckeditor',
     'django_object_actions',
+    'captcha',
     'hornet',
     'blog',
 ]
@@ -117,3 +118,6 @@ CKEDITOR_CONFIGS = {
         'format_tags': 'h1;h2;p'
     },
 }
+
+
+NOCAPTCHA = True

@@ -52,6 +52,11 @@
         text-align: right;
     }
 
+    .g-recaptcha {
+        float: right;
+        margin-bottom: 20px;
+    }
+
     button {
         background-color: $blog-accent-color;
         border: none;
@@ -63,6 +68,8 @@
         text-transform: uppercase;
         opacity: .85;
         transition: opacity .25s;
+        float: right;
+        clear: both;
 
         &:hover {
             opacity: 1;
@@ -114,6 +121,20 @@
     #comments-section {
         position: relative;
         top: -65px;
+    }
+}
+
+
+@media all and (min-width: 568px) {
+    .comments-section {
+        .g-recaptcha {
+            float: left;
+            margin-bottom: 0;
+        }
+
+        button {
+            clear: none;
+        }
     }
 }
 
