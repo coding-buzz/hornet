@@ -44,7 +44,9 @@ class BlogPostForm(forms.ModelForm):
 
 class BlogPostAdmin(DjangoObjectActions, admin.ModelAdmin):
     form = BlogPostForm
+    field = ['is_published']
     filter_horizontal = ('categories', )
+    list_display = ('title', 'created_at', 'published_at')
     inlines = (ContentImageInline, SourceCodeInline, CommentInline)
 
     def preview(self, request, obj):
