@@ -13,7 +13,7 @@ from blog.models import ContentImage, SourceCode
 register = template.Library()
 
 _IMAGE_TAG_REGEX = re.compile(r'{{ image \d+ }}')
-_IMAGE_HTML_TAG = '<img src="{path}" alt="{title}"/>'
+_IMAGE_HTML_TAG = '<a href="{path}" target="_blank"><img src="{path}" alt="{title}"/></a>'
 
 _YOUTUBE_TAG_REGEX = re.compile(r'{{ youtube .+ }}')
 _YOUTUBE_HTML_TAG = '<iframe class="yt-frame" type="text/html" src="http://www.youtube.com/embed/{movie_id}"></iframe>'
