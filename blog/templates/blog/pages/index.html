@@ -1,6 +1,11 @@
 {% extends "blog/base.html" %}
 
 
+{% block title %}
+    Blog{% if category %} &#187; {{ category.name }}{% endif %}
+{% endblock %}
+
+
 {% block content %}
     <div class="page-content blog-page blog-index-page" xmlns="http://www.w3.org/1999/html">
         <div class="wrapper">

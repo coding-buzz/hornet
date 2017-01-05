@@ -1,6 +1,11 @@
 {% extends "blog/base.html" %}
 
 
+{% block title %}
+    Blog &#187; {{ blog_post.title }}
+{% endblock %}
+
+
 {% block content %}
     <div class="page-content blog-page blog-post-page">
         <div class="wrapper">
