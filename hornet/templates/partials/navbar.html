@@ -1,8 +1,8 @@
 <nav>
     <div class="wrapper">
-        <span class="page-title">
+        <a class="page-title" href="{% url 'index' %}">
             Coding Buzz
-        </span>
+        </a>
         <ul class="menu-items">
             {% with namespace=request.resolver_match.namespace %}
                 <li>
