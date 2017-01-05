@@ -47,7 +47,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'blog.context_processors.base_url',
-                'blog.context_processors.mailchimp'
+                'blog.context_processors.mailchimp',
+                'hornet.context_processors.google_analytics',
             ],
         },
     },
@@ -121,3 +122,4 @@ CKEDITOR_CONFIGS = {
 
 
 NOCAPTCHA = True
+ENABLE_GOOGLE_ANALYTICS = False
