@@ -14,6 +14,8 @@
             {% block page_styles %}{% endblock %}
         {% endcompress %}
         <link rel="shortcut icon" href="/favicon.ico" />
+        {% block og %}
+        {% endblock %}
     </head>
 
     <body {% block bodyclass %}{% endblock %}>
