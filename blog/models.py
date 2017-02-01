@@ -40,6 +40,9 @@ class ContentImage(models.Model):
     title = models.CharField(max_length=255)
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='images')
 
+    def __unicode__(self):
+        return unicode(self.id)
+
 
 class SourceCode(models.Model):
     _LANGUAGE_CHOICES = utils.get_available_lexers()
@@ -47,6 +50,9 @@ class SourceCode(models.Model):
     language = models.CharField(max_length=40, choices=_LANGUAGE_CHOICES)
     content = models.TextField()
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='source_codes')
+
+    def __unicode__(self):
+        return unicode(self.id)
 
 
 class Comment(models.Model):

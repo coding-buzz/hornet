@@ -53,7 +53,8 @@ def include_source_codes(post_content):
             source_code_id = source_code_tag.lstrip('{{ sourcecode ').rstrip(' }}')
             source_code = SourceCode.objects.get(id=source_code_id)
             lexer = get_lexer_by_name(source_code.language)
-            formatted_code = highlight(source_code.content, lexer, HtmlFormatter())
+            formatted_code = highlight(source_code.content, lexer, HtmlFormatter(linenos=True))
+            formatted_code = "<div class='source-code-wrapper'>{}</div>".format(formatted_code)
             post_content = post_content.replace(source_code_tag, formatted_code)
         except ObjectDoesNotExist:
             pass
