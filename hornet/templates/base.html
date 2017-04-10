@@ -1,5 +1,5 @@
-{% load static %}
-{% load compress %}
+{% load static compress %}
+
 
 <!DOCTYPE html>
 <html>
@@ -14,8 +14,6 @@
             {% block page_styles %}{% endblock %}
         {% endcompress %}
         <link rel="shortcut icon" href="/favicon.ico" />
-        {% block og %}
-        {% endblock %}
     </head>
 
     <body {% block bodyclass %}{% endblock %}>
@@ -28,13 +26,6 @@
             <script type="text/javascript" src="{% static "scripts/navbar.js" %}"></script>
             {% block page_scripts %}{% endblock %}
         {% endcompress %}
-        {% if anchor %}
-            <script type="text/javascript">
-                $(function() {
-                    window.location.hash = '{{ anchor }}';
-                });
-            </script>
-        {% endif %}
         {% include 'partials/analytics.html' %}
     </body>
 </html>

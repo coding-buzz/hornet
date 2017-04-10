@@ -12,11 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
-    'ckeditor',
-    'django_object_actions',
-    'captcha',
     'hornet',
-    'blog',
 ]
 
 
@@ -46,8 +42,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'blog.context_processors.base_url',
-                'blog.context_processors.mailchimp',
                 'hornet.context_processors.google_analytics',
             ],
         },

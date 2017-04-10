@@ -1,23 +1,19 @@
 <nav>
     <div class="wrapper">
-        <a class="page-title" href="{% url 'index' %}">
+        <span class="page-title">
             Coding Buzz
-        </a>
+        </span>
         <ul class="menu-items">
-            {% with namespace=request.resolver_match.namespace %}
-                <li>
-                    <a href="{% url 'index' %}"
-                       class={% if namespace == '' %}"active"{% endif %}>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'blog:index' %}"
-                       class={% if namespace == 'blog' %}"active"{% endif %}>
-                        Blog
-                    </a>
-                </li>
-            {% endwith %}
+            <li>
+                <a href="{% url 'index' %}" class="home-link">
+                    Home
+                </a>
+            </li>
+            <li>
+                <span class="inactive">
+                    Blog
+                </span>
+            </li>
         </ul>
     </div>
     <div class="shadow"></div>
