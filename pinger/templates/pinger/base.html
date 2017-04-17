@@ -1,0 +1,23 @@
+{% load static compress %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Pinger | {% block title %}Keep it pinged!{% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'pinger/scss/base.scss' %}" />
+        {% block page_styles %}{% endblock %}
+    {% endcompress %}
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+
+<body {% block bodyclass %}{% endblock %}>
+    {% include 'pinger/partials/navbar.html' %}
+    {% block content %}{% endblock %}
+</body>
+</html>
