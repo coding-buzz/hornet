@@ -1,0 +1,52 @@
+<div class="panel-group" role="tablist">
+
+    {# PING CHECKS #}
+
+    <div class="panel panel-primary">
+        <div class="panel-heading" role="tab">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#pingChecksMenu">
+                    Ping Checks
+                    <span class="badge">{{ ping_checks|length }}</span>
+                </a>
+            </h4>
+        </div>
+        <div id="pingChecksMenu" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="list-group">
+                    {% for check in ping_checks %}
+                        <a href="#" class="list-group-item">
+                            {{ check.name }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {# RESPONSE CHECKS #}
+
+    <div class="panel panel-primary">
+        <div class="panel-heading" role="tab">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#responseChecksMenu">
+                    Response Checks
+                    <span class="badge">{{ response_checks|length }}</span>
+                </a>
+            </h4>
+        </div>
+        <div id="responseChecksMenu" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="list-group">
+                    {% for check in response_checks %}
+                        <a href="#" class="list-group-item">
+                            {{ check.name }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

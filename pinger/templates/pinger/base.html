@@ -18,6 +18,22 @@
 
 <body {% block bodyclass %}{% endblock %}>
     {% include 'pinger/partials/navbar.html' %}
-    {% block content %}{% endblock %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 col-md-3 col-lg-2 well left-menubar">
+                {% include 'pinger/partials/left_menu.html' %}
+            </div>
+            <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2 content-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    {% compress js %}
+        <script type="text/javascript" src="{% static 'pinger/js/vendor/jquery-1.12.4.js' %}"></script>
+        <script type="text/javascript" src="{% static 'pinger/js/vendor/bootstrap.js' %}"></script>
+        {% block page_scripts %}{% endblock %}
+    {% endcompress %}
 </body>
 </html>
